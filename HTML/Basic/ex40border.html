@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex40border.html</title>
+    <style>
+        /*  
+        [1] border-style: 테두리 스타일. none, solid(실선), dashed(긴점선)
+						dotted(짧은 점선), inset(오목선),outset(볼록선),ridge,groove,
+						double..
+		[2] border-width: 테두리 폭. 수치, thick, thin
+		[3] border-color: 테두리 색상
+		[4] border-radius: 수치. 모서리를 둥글게 처리
+	
+	*/
+    div{
+        width:100px;
+        height:100px;
+        background-color: olive;
+        padding:10px;
+        /* border:3px dashed red; */
+        border-style:outset;
+        border-width:10px;
+        border-color:lightgreen;
+        border-radius: 50%;
+    }
+    /* 
+    table: 폭:200px, 높이 200px
+           글자 중앙정렬
+           바깥여백 : 2em
+        #tab1  : 테두리 groove 20px 색상
+        #tab2
+    */
+    table{
+        width:200px;
+        height:200px;
+        text-align:center;
+    }
+    #tab1{
+        border: groove 20px green;
+        margin-bottom:1em;
+    }
+    #tab2{
+        border-top: 10px ridge orange;
+        border-left:10px inset tomato;
+        border-bottom:10px double magenta;
+        border-right:10px dotted maroon;
+    }
+    </style>
+</head>
+<body>
+    <h1>border 관련 스타일</h1>
+    <div>
+        div영역
+    </div>
+    <table id="tab1">
+        <tr>
+            <td>
+                1행1열
+            </td>
+        </tr>
+    </table>
+
+    <table id="tab2">
+        <tr>
+            <td>
+                1행1열
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+<!-- ex40border.html -->

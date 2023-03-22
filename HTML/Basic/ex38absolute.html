@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex38absolute.html</title>
+    <style>
+        #absolute{
+            background-color: thistle;
+            position: absolute;
+            right:50px;
+            top:80px;
+            /* absolute: 부모요소를 기준으로 좌표를 잡는방식 
+                position을 absolute로 주면 width,height가 없어진다.
+                부모가 relative가 아니라면 body를 기준으로 좌표 잡는다*/
+        }
+        #parent{
+            position: relative;
+            width:400px;
+            height: 400px;
+            background-color: blanchedalmond;
+        }
+        #child{
+            position: absolute;
+            top:50px;
+            right:100px;
+            width: 100px;
+            height: 100px;
+            border: 1px solid magenta;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="absolute">
+            absolute
+        </div>
+    </div>
+    <!-- 자손 position속성에 absolute를 적용하면 부모 position에 relative를 적용해야 함
+         그렇지 않으면  body요소를 기준으로 좌표를 잡는다.
+           -->
+    <div id="parent">
+        <div id="child">
+            children
+        </div>
+    </div>
+    <h1>position - absolute</h1>
+</body>
+</html>
+<!-- ex38absolute.html -->

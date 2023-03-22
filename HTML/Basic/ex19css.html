@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex19css.html</title>
+    <style type="text/css">
+        /* css 주석 */
+        *{ /* 전체 선택자(기본선택자)*/
+            color:blue; /*글자색*/
+        }
+        body{ /*태그 선택자*/
+            padding:50px;/*안쪽여백*/
+            font-family:Verdana, Geneva, Tahoma, sans-serif;/*서체*/
+            font-size:1.5em; /*글자크기*/
+            /* 상대적 단위
+            1em :디폴트 글자크기(16px)
+            */
+        }
+        /* b태그에 대해 css를 아래와 같이 정의하세요
+            - 글자색상: tomato
+            - 글자크기: 2.5배
+            - 배경색: beige   */
+        b{
+            color:tomato;
+            font-size:2.5em;
+            background-color:beige;
+        }
+    </style>
+</head>
+<body>
+    <!-- html 주석
+        [1] style태그로 파일 내부에 정의하는 방법
+        [2] 외부파일에 정의한 뒤 참조하는 방법(style.css)   
+            <1> link태그로 참조하는 방식
+            <2> @import로 참조하는 방식
+        [3] inline style로 정의하는 방법: 태그 안에 style을
+                기술하는 방법
+     -->
+    <div>
+        안녕하세요 <br>
+        <b>CSS3.0</b>을 배워봅시다
+        <p>
+            HTML의 보완적 요소가 CSS입니다<br>
+            <b>Cascading Style Sheet 3.0</b>
+        </p>
+        <img src="images/car1.png" style="width:90%">
+    </div>
+</body>
+</html>
+<!-- ex19css.html -->

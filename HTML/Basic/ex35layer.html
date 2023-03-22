@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex35layer.html</title>
+    <style>
+        body{
+            padding:20px;
+        }
+        /* id가 wrap이 아닌 div요소들만 width:100px, heigh:100px로 주세요 */
+        div:not(#wrap){
+            /* background-color: blueviolet; */
+            width:100px;
+            height:100px;
+        }
+        #wrap{
+            border: 1px solid silver;
+            position:relative;
+            width:70%;
+            height:500px;
+            margin:auto;
+        }
+        .z-1{
+            position: absolute;
+            /* absolute: 상위 부모 요소를 기준으로 x,y좌표를 잡는다 
+                    단, 상위 부모요소의 position이 relative일 경우 해당 부모를 기준으로 삼으나,
+                        부모가 relative가 아니라면 body를 기준으로 좌표를 잡는다
+            */
+            left:50px;
+            top:50px;
+            background-color: indianred;
+            z-index: 999;
+            /* z-index값이 클수록 위로 올라간다 */
+        }
+        .z-2{
+            position:absolute;
+            left:80px;
+            top:80px;
+            background-color: lightblue;
+            z-index:8;
+        }
+        .z-3{
+            position:absolute;
+            left:110px;
+            top:110px;
+            background-color: lightseagreen;
+            z-index: 7;
+            
+        }
+        .z-4{
+            position:absolute;
+            left:140px;
+            top:140px;
+            background-color: lightpink;
+            z-index: 6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Layer 구성</h1>
+    <div id="wrap">
+        <div class="z-1">레이어 z-1</div>
+        <div class="z-2">레이어 z-2</div>
+        <div class="z-3">레이어 z-3</div>
+        <div class="z-4">레이어 z-4</div>
+    </div>
+</body>
+</html>
+<!-- ex35layer.html -->

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10tableSpan.html</title>
+</head>
+<body>
+    <h1>테이블 셀 합치기 (colspan속성, rowspan속성)</h1>
+    <!-- 3행3열 테이블 만들기 (폭:300px) -->
+    <h2>열병합(colspan)</h2>
+    <table border="1" width="300px">
+        <tr>
+            <td>1,1</td>
+            <td colspan="2">1,2</td>
+            <!-- <td>1,3</td> -->
+        </tr>
+        <tr>
+            <td>2,1</td>
+            <td>2,2</td>
+            <td>2,3</td>
+        </tr>
+        <tr>
+            <td colspan="3">3,1</td>
+            <!-- <td>3,2</td>
+            <td>3,3</td> -->
+        </tr>
+    </table>
+    <hr color="red">
+
+    <h2>행병합(rowspan)</h2>
+
+    <table border="1" width="300">
+        <tr>
+            <td rowspan="2">1,1</td>
+            <td>1,2</td>
+            <td>1,3</td>
+        </tr>
+        <tr>
+            <!-- <td>2,1</td> -->
+            <td>2,2</td>
+            <td rowspan="2">2,3</td>
+        </tr>
+        <tr>
+            <td>3,1</td>
+            <td>3,2</td>
+            <!-- <td>3,3</td> -->
+        </tr>
+    </table>
+
+</body>
+</html>
+<!-- ex10tableSpan.html -->
+
+

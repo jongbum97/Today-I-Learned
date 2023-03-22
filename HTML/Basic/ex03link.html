@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- ex03link.html -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ex03link.html</title>
+    </head>
+    <body>
+        <h1>텍스트에 하이퍼 링크를 걸어봅시다</h1>
+        <a href="http://www.naver.com">네이버</a>|
+        <a href="http://www.google.com" target="_blank">구글</a> |
+        <!-- target="_blank" 새로운 탭을 열어서 이동한다 -->
+        <a href="http://www.daum.net">다음</a>
+        <hr color="red">
+        <a href="ex01.html">내가만든 문서1-ex01.html</a>
+        <a href="./test.html">내가만든 문서2-test.html</a>
+        <!-- 
+            . : 현재 디렉토리에서 찾으라는 의미
+            .. : 현재 디렉토리의 한단계 상위 디렉토리를 찾으라는 의미
+            ../../ : 두 단계 상위 디렉토리를 의미
+         -->
+         <hr color="blue">
+         <a href="sample/hello.html">sample안의 hello.html로 가기</a><br>
+         <a href="./sample/hello.html">sample안의 hello.html로 가기</a>
+         <!-- 상대경로 : 현재 실행중인 파일을 기준경로로 잡을 경우 -->
+
+         <!-- 절대경로 : 웹서버 루트 디렉토리를 기준으로 경로를 잡을 경우 -->
+         <!-- / : http://127.0.0.1:5500 -->
+         <a href="/sample/hello.html">hello.html로 가기</a>
+         <a href="http://127.0.0.1:5500/sample/hello.html">hello.html로 가기</a>
+
+    </body>
+</html>

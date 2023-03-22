@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: violet;
+            margin:5px;
+            padding: 5px;
+            text-align: center;
+        }
+        div:nth-child(1){
+            display:block;
+            /* display: none; */
+            /* 1번 div 영역이 사라짐 */
+        }
+        #d2{
+            /* visibility: hidden; */
+            visibility: visible;
+            /* hidden<=> visible */
+        }
+        #d3{
+            opacity: 0.5;
+            /* 투명도: 0 (투명하게)
+                       1 (불투명하게)
+                 */
+        }
+        
+    </style>
+</head>
+<body>
+<div id="d1">1 display</div>
+<div id="d2">2 visibility</div>
+<div id="d3">3 opacity</div> 
+<hr>   
+<button onclick="showDiv()">show</button>
+<button onclick="hideDiv()">hide</button>
+<script type="text/javascript">
+    function showDiv(){
+        //alert('hi')
+        var obj=document.getElementById('d1');
+        var obj2=document.getElementById('d2')
+        //alert(obj)
+        obj.style.display='block';
+        obj2.style.visibility='visible';
+    }
+
+    function hideDiv(){
+        //alert('bye~')
+        var obj=document.getElementById('d1');
+        var obj2=document.getElementById('d2')
+        //alert(obj)
+        obj.style.display='none';
+        obj2.style.visibility='hidden'
+        //#d2의 visibility값을 hidden으로 주세요
+    }
+</script>
+</body>
+</html>
+<!-- ex42effect.html -->
+
+
+

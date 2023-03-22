@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12audio.html</title>
+</head>
+<body>
+    <h1>오디오 재생</h1>
+    <audio src="audios/I_Have_A_Dream.mp3" controls="controls"></audio>
+    <hr color="red">
+    <!-- 
+        mp3(크롬, 사파리)
+        ogg(크롬, 오페라, 파이어폭스)
+        wav(크롬, 오페라, 파이어폭스,사파리)
+     -->
+    <audio controls loop="2" preload="metadata">
+        <source src="audios/I_Have_A_Dream.mp3" type="audio/mp3">
+        <source src="audios/I_Have_A_Dream.ogg" type="audio/ogg">
+        <source src="audios/I_Have_A_Dream.wav" type="audio/wav">
+        오디오가 지원되지 않는 브라우저입니다
+    </audio>
+
+</body>
+</html>
+<!-- ex12audio.html -->

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex32_background.html</title>
+    <style type="text/css">
+        body{
+            color:navy;
+            /* color:#ac19f7; */
+            /* color:rgb(225,80,200); */
+            /* color:rgba(50%, 90%,20%, 1) */
+            /* rgb(red,green,blue) 0~255, 백분율
+               rgba(r,g,b, alpha)
+               alpha: 투명도(0~1사이의 실수값)
+                0:투명  1:불투명
+            */
+        }
+        /* span태그: 글자크기 2배, 안쪽여백 5px 바깥여백 30px */
+        span{
+            font-size:2em;
+            padding: 5px;
+            margin-bottom:30px;
+            /* padding-top:5px;
+            padding-left:10px;
+            padding-bottom:20px;
+            padding-right:30px; */
+        }
+        span.sky{
+            background-color: skyblue;
+        }
+        .pink{
+            background-color: pink;
+        }
+        /* td태그에 배경색 주기 
+            폭: 25%  */
+        table>tbody>tr>td{
+            /* background-color: aquamarine; */
+            background-image:url(./images/icon1.png);
+            background-repeat:no-repeat; /*배경이미지 반복여부: repeat(디폴트)*/
+            width:25%;
+        }
+        tr:nth-child(1)>td:nth-child(1){
+            background-repeat: repeat;
+        }
+        tr:nth-child(1)>td:nth-child(2){
+            background-repeat: repeat-x;
+            /* x축으로 이미지 반복  */
+        }
+        tr:nth-child(1)>td:nth-child(3){
+            background-repeat: repeat-y;
+            /* y축으로 반복 */
+        }    
+        /* 배경이미지 위치 : background-position */
+        #a{
+            background-position: left top;
+        }
+        #b{
+            background-position: right bottom;
+        }
+        #c{
+            background-position: 50% 50%;
+        }
+        #d{
+            background-position: 50px 50px;
+        }
+         /* textarea에 대해 아래 스타일을 적용하세요
+            글자크기: 1.2em;
+            배경이미지: 알아서
+            배경이미지: 반복하지 않도록
+            이미지를 중앙에 위치시키세요
+            테두리: 2px solid 색상알아서  */
+        textarea.txt{
+            font-size:1.2em;
+            background-image:url('./images/icon2.png');
+            background-repeat:no-repeat;
+            background-position: 50% 50%;
+            border:2px solid khaki;
+            background-attachment: local;
+            /* scroll: default값. 내용을 스크롤하면
+                배경이미지는 스크롤되지 않음
+               local : 스크롤하면 배경이미지가 움직인다 
+            */
+        }  
+        div.bgimg{
+            border: 1px solid red;
+            width:90%;
+            margin:auto;
+            height:400px;
+            background-image: url(./images/flower2.png);
+            background-repeat: no-repeat;
+            /* background-size: 300px 300px; */
+            /* background-size: 100%; */
+            /* overflow: scroll; */
+            /* background-size: contain; */
+            background-size: cover;
+        }  
+    </style>
+</head>
+<body>
+    <h1>배경 관련 스타일</h1>
+    <span class="sky">배경색 적용하기1</span>
+    <span class="pink">배경색 적용하기2</span>
+    <h2 class="sky">배경에 이미지 적용하기</h2>
+    <hr color="red">
+    <table border="1" height="400" width="90%">
+        <tr>
+            <td>repeat</td>
+            <td>repeat-x</td>
+            <td>repeqt-y</td>
+            <td>no-repeat</td>
+        </tr>
+        <tr>
+            <td id="a">기본 위치는 left top</td>
+            <td id="b">right-bottom</td>
+            <td id="c">50% 50%</td>
+            <td id="d">50px 50px</td>
+        </tr>
+    </table>
+    <hr color="blue">
+    <textarea class="txt" rows="10" cols="50">안녕하세요?</textarea>
+    <div class="bgimg">
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
+<!-- ex32_background.html -->
