@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex34Array.html</title>
+</head>
+<body>
+    <h1>배열의 주요 함수(메서드)</h1>
+    <h3>push(): 배열에 새로운 요소를 마지막에 추가한다.</h3>
+    <h3>unshift(): 배열에 맨 앞에 새로운 요소를 추가한다</h3>
+    <h3>concat(): 배열의 요소를 모두 합쳐 배열을 만들어 리턴한다.</h3>
+    <h3>join(): 배열 안의 모든 요소를 문자열로 만들어 반환한다.</h3>
+    <h3>pop(): 배열의 마지막 요소를 제거하고 반환한다.</h3>
+    <h3>shift(): 배열의 첫번째 요소를 제거하고 반환한다.</h3>
+    <h3>sort() : 오름차순으로 정렬하여 반환한다.</h3>
+    <h3>splice(start인덱스, [삭제할count수]):
+        시작인덱스에서 count수만큼 삭제한다
+    </h3>
+    <h3>
+        splice(startIndex, delCount, addElement):
+        삭제한 뒤 새로운 요소를 삽입한다
+    </h3>
+    <h3>slice(start, end)
+        : start인덱스에서부터 end-1까지의 요소를 조각내어 반환함
+    </h3>
+    <h3>forEach(handler함수): 배열에 저장된 요소만큼 반복문을
+        돌면서 저장된 요소를 핸들러 함수의 매개변수에 전달함
+    </h3>
+    <hr color="red">
+    <script>
+        const fruits=["Banana","Apple","Orange","Mango"];
+        document.write(`<h3>${fruits}</h3>`)
+        //[1]fruits 마지막에 Kiwi를 추가한 뒤, for루프 이용해 fruits저장된 요소들 출력하기
+        fruits.push('Kiwi');
+        for(let i=0;i<fruits.length;i++){
+            document.write(fruits[i]+", ");
+        }
+        //[2]fruits 앞에 Lemon을 추가하세요
+        fruits.unshift('Lemon');
+        document.write("<br>",fruits,"<br>");
+
+        //[3] 맨 마지막 요소를 제거하고 남은 배열 출력하기
+        let a=fruits.pop();
+        document.write(fruits,"<br>","a="+a,"<br>");
+
+        //[4] 맨 앞의 요소를 제거하고 남은 배열 출력하기 
+
+        let b=fruits.shift();
+        document.write(fruits,"<br>","b="+b,"<br>");
+
+        fruits.sort(); //오름차순으로 정렬한다
+        document.write("<hr>",fruits,"<br>");
+
+        //내람차순 정렬을 하고자 한다면
+        fruits.sort(function(a, b){
+            //함수가 반환하는 값에 따라 정렬을 달리한다
+            //0이나 음수값을 반환하면 그대로 두고,
+            //양수가 나오면 서로 위치를 바꿈
+            return (a>b)? -1: 1; //내림차순
+            //return (a>b)? 1:-1;//오름차순
+        })
+        document.write("<hr color='red'>",fruits,"<br>");
+
+        let drinks=Array('Coke','Juice','Beer');
+
+        let newArr=fruits.concat(drinks);
+        document.write(newArr,"<br>");//새로운 배열을 반환
+        document.write(fruits,"<br>");
+
+        let str=newArr.join();
+        document.write(`<h3>${str}</h3>`)
+        //콤마(,)로 연결된 문자열을 반환
+        //[5] newArr에서 Apple 을 삭제하세요
+        let c=newArr.splice(3,1);
+        document.write(newArr,"<br>","c="+c,"<br>");
+        //[6] newArr에서 Coke를 삭제하고  Water를 추가하세요
+        c=newArr.splice(3,1,"Water");
+        document.write(newArr,"<br>","c="+c,"<br>");
+        //[7] newArr에서 Banana, Water, Juice요소만 조각내어
+        //   추출하세요
+        let arr3=newArr.slice(2,5);
+        document.write(arr3,"<br>");
+        //[8] arr3에 저장된 값을 forEach()함수를 이용해 출력해보세요
+        //<1> for루프문        
+        for(let i=0;i<arr3.length;i++){
+            document.write(arr3[i]+"@ ");
+        }
+        //<2> for in 루프문
+        for(let i in arr3){
+            document.write(arr3[i]+"$ ")
+        }    
+        document.write("<hr color='blue'>");
+        //<3> 배열.forEach(function(value, index){})문
+        arr3.forEach(function(value, i){
+            document.write(`<h3>${i} : ${value}</h3>`)
+        })    
+    </script>
+</body>
+</html>
+<!-- ex34Array.html -->

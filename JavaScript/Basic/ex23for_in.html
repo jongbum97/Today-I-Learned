@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>for in loop문</h1>
+    <pre>
+        for 변수 in 객체(또는 배열, Collection)
+        {
+            실행문;
+            변수는 객체의 속성(property)을 참조한다
+        }
+    </pre>
+    <hr color="red">
+    <script>
+        //객체
+        let tv=new Object();
+        //객체명.속성명=값
+        tv.width=300;
+        tv.height=200;
+        tv.color='black';
+        tv.price=1000000;
+
+        //객체명.함수명=function(){...}
+        tv.info=function(){
+        let str=`TV색상:${this.color}   TV가격: ${this.price} 
+                    TV사이즈(WxH):${this.width} x ${this.height}`;
+            document.write(`<h2>${str}</h2>`)                    
+        }
+
+        tv.info();
+
+        document.write("<hr color='blue'>");
+
+        //for in loop
+        for(var p in tv){
+            document.write(`<h2>${p} = ${tv[p]}</h2>`)
+        }
+        document.write("<hr color='red'>")
+        //window객체의 속성명을 for in루프로 출력해보세요
+        for(let prop in window){
+            document.write(prop,", ");
+        }
+        document.write("<hr color='red'>")
+        document.write('window innerWidth: ',window['innerWidth'])
+        //eval("표현식"): 내장함수
+        //표현식을 파싱하여 그대로 실행시킴
+        let str='3+5*9-2';
+        //alert(typeof str) string
+        document.write(`<h2>eval(${str}):  ${eval(str)} </h2>`)
+        
+
+    </script>
+</body>
+</html>
+<!-- ex23for_in.html -->

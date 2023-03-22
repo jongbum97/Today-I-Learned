@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>중첩 for루프문</h1>
+    <script>
+        //3행 5열
+        for(let j=1;j<=3;j++){ //행의 조건
+            for(let i=1;i<=5;i++){//열의 조건
+                document.write("★");
+            }
+            document.write("<br>");
+        }
+        document.write("<hr color='red'>");
+
+        for(let j=1;j<6;j++){
+            for(let i=1;i<6;i++){
+                document.write(`(${j}, ${i}) `)
+            }
+            document.write("<br>");
+        }
+        document.write("<hr color='red'>");
+          /*[1]
+        ★
+        ★★
+        ★★★
+        ★★★★
+        ★★★★★        
+        중첩 for루프 이용해서 위 모양을 출력하세요
+        */
+        for(let i = 0; i <= 5; i++){
+            for(let j = 0; j < i; j++){
+                document.write("⭐");
+            }
+            document.write("<br>");
+       }
+
+       for(let i=1;i<6;i++){
+            for(let j=1;j<6;j++){
+                if(i>=j){
+                    document.write("⭐");
+                }
+            }//for--
+            document.write("<br>");
+       }
+       document.write("<hr color='blue'>")
+       for(let i=1;i<6;i++){
+            for(let j=1;j<6;j++){
+                if(i+j>=6){
+                    document.write("⭐");
+                }else{
+                    document.write("&nbsp;&nbsp;&nbsp;&nbsp;");
+                }   
+            }
+            document.write("<br>");
+       } 
+       document.write("<hr color='red'>")
+       // [2] 구구단 전체를 table태그 이용해서 출력하기 (중첩 for루프 이용)
+
+       let str=`
+        <table border="1" style='width:80%;margin:auto'>
+           <tr>
+                <th colspan="8" bgcolor='gold'>구구단</th>
+           </tr>             
+           <tr>
+       `
+       for(let dan=2;dan<10;dan++){
+            str+=`            
+                <th style='backgroud:#efefef;'>${dan}단</th>
+            `
+       }    
+       str+=`</tr>`
+       for(let i=1;i<10;i++){//행의 조건
+          str+=`<tr>`;
+            for(let j=2;j<10;j++){//열의 조건
+                str+=`
+                    <td>
+                     ${j}x${i}=${i*j}   
+                    </td>    
+                `
+            }          
+          str+=`</tr>`  
+       }
+       str+=`</table>`
+      
+       document.write(str);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex08operator.html</title>
+</head>
+<body>
+    <h1>연산자-operator</h1>
+    <script>
+        function print(str){
+            document.write("<h3>"+str+"</h3>");
+        }
+        print("1. 산술 연산자(+,-,*,/,%)");
+
+        let a=10;
+        let b=3;
+        print(a/b);
+        print(a%b);
+        print('2. 관계 연산자 (==,!=, ===)');
+        // == : 값이 같으면 true, 다르면 false
+        // != : 값이 다르면 true, 같으면 false
+        // === : 값도 같고 자료형도 같으면 true, 그렇지 않으면 false
+        // !== : 값이 다르거나, 자료형이 다르면 true, 그렇지 않으면 false
+        // = : <=대입연산자, 할당연산자
+        print("a="+a);
+        print("b="+b);
+        print(a==b);//false
+        print(a!=b);//true
+        print(a===b);//false
+
+        let c=10.0;//number
+        let d="10";//string
+        print(a==c);//true
+        print(c==d);//true
+        print(c===d);//자료형이 달라서 false
+        print(c!==d);//false
+        print('2. 관계연산자 (>, >=, <, <=)');
+        let x=77;
+        let y=33;
+        let z=77.1;
+        print("x="+x+", y="+y+", z="+z);
+        print("x>y: "+(x>y));
+        print("x>=z: "+(x>=z));
+
+    </script>
+</body>
+</html>
+<!-- ex08operator.html -->

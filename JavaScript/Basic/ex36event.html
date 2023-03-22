@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex36event.html</title>
+    <script>
+        let win=null;
+        function openWin(){
+            win=open('ex01.html','title','width=500,height=500')
+        }
+        function closeWin(){
+            if(win!=null){
+                win.close();
+                win=null;
+            }
+        }
+    </script>
+</head>
+<body onload="openWin()" onunload="closeWin()">
+    <h1>이벤트</h1>
+     <!-- 
+        onfocus : 입력 포커스가 왔을 때
+        onblur  : 입력 포커스가 옮겨진 경우
+        onchange : 입력필드 값을 바꿨을 때. tab키 눌러 테스트하기
+        oninput: 값을 입력할 때
+     -->
+     <!-- 
+        onkeypress: 타이핑할 때 (shift, ctrl, alt키는 인식 못함)
+        onkeydown : 키를 누를 때 (모든 키를 인식한다)
+                onkeydown이 onkeypress보다 먼저 이벤트가 발생된다.
+        onkeyup : 키를 눌렀다 뗄 때
+        onmouseenter : 마우스가 영역에 들어왔을 때
+        onmouseleave : 마우스가 영역을 떠날 때                
+     -->
+    아이디: <input type="text" name="uid" id="uid"
+     onfocus="this.style.backgroundColor='gray'"
+      onblur="this.style.backgroundColor=''"
+      onchange="document.bgColor='beige'"
+      oninput="this.style.color='red'">
+    <br><br>
+    이름: 
+    <input type="text" name="name" id="name"
+     onkeypress="console.log('keypress')"
+     onkeydown="console.log('keydown')"
+     onkeyup="console.log('keyup')">
+    <br><br>
+    자기소개:<textarea rows="7" cols="30"
+     onselect="this.style.border='3px dashed blue'">이곳에 쓴 내용을 select해보세요</textarea>
+     <hr color="red">
+     <button id="btn" onclick="changeColor()">Click Me</button>
+     <button onclick="changeBackgroundColor()">Click Me2</button>
+
+     <script>
+        //배열을 선언하고 배열에 여러가지 색상을 저장하세요
+        const colors=['red','blue','green','pink','lavender','beige']
+        //[문제1] 버튼을 누를 때마다 body의 배경색이
+        //    변경되도록 하세요. 단 배경색은 배열 cr에
+        //   저장된 색으로 변경되도록 합시다.
+        let i = 0;
+        function changeColor(){
+            document.body.bgColor = colors[i]
+            i = (i>=colors.length-1)? 0:++i;
+        }
+
+        const cr = ['beige', 'lightblue', 'pink', 'lightgreen', 'lavender'];
+        let index = 0;
+
+        function changeBackgroundColor() {
+           
+            const body = document.getElementsByTagName('body')[0];
+            body.style.backgroundColor = cr[index];
+
+    
+            index = (index + 1) % cr.length;
+        }
+
+     </script>
+</body>
+</html>
+<!-- ex36event.html -->

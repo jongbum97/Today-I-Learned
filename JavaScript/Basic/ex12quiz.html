@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12quiz.html</title>
+</head>
+<body>
+    <h1>적정 체중을 구하는 프로그램</h1>
+    <div>
+        [실습] 이름, 키, 몸무게를 prompt로 입력받아서 적정 체중을 구한뒤<br>
+        테이블 형태로 출력하세요<br>
+        이름  홍길동<br>
+        키    188cm<br>
+        몸무게 65kg<br>
+        적정체중:  kg<br>
+
+        적정체중 => (키 -100)값의 90% 정도를 적정체중으로 합니다<br>
+        
+        적정 체중을 10% 초과하면  '과체중(red)', 적정 체중 10% 미달이면<br>
+               '체중 미달(blue)', 그 외에는 '적정체중(green)'을 출력하세요<br>
+    </div>
+    <hr color="red">
+    <script>
+        let name=prompt('이름을 입력하세요', "홍길동");
+        let height=prompt('키를 입력하세요',180);
+        let weight=prompt('몸무게를 입력하세요',70);
+
+        let standard=(height-100)*0.9;
+        let result;
+        let cr='black';
+        if(weight> standard*1.1){
+            result='과체중 입니다';//red
+            cr='red';
+        }else if(weight < standard*0.9){
+            result='체중 미달이에요';//blue
+            cr='blue';
+        }else{
+            result='적정 체중입니다';//green
+            cr='green';
+        }    
+        let str="<table border='1'>";
+            str+="<tr><th>이름</th><td>"+name+"</td></tr>";
+            str+="<tr><th>키</th><td>"+height+" cm</td></tr>";
+            str+="<tr><th>몸무게</th><td>"+weight+" kg</td></tr>";
+            str+="<tr><th>적정체중</th><td>"+standard+" kg</td></tr>";
+            str+="<tr><th>결  과</th><td style='color:"+cr+"'>"+result+"</td></tr>";
+            str+="</table>";
+        document.write(str);    
+    </script>
+</body>
+</html>
+<!-- ex12quiz.html -->

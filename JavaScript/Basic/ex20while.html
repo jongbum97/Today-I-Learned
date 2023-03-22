@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex20while.html</title>
+</head>
+<body>
+    <h1>반복문-while loop문</h1>
+    <script>
+        /* 
+        변수선언문/초기화
+        while(조건식){
+            실행문;
+            증감식;
+        }
+        조건식이 true이면 실행문을 실행한다
+        false이면 while루프를 벗어난다
+        */ 
+       let a=1;
+       while(a<5){
+            document.write("Hello "+a,"<br>");
+            a+=2;
+       }
+       document.write("<hr color='red'>")
+       document.write("a=",a,"<br>")
+        //10, 9, 8, ...2,1 형태로 while루프를 이용해 출력하고,
+        //10+9+8+ ...+1=55 
+        //10부터 1까지의 합을 구해 덧셈식과 함께 출력하기
+        let b=10, sum=0;
+        while(b>0){
+            let sign="+";
+            if(b==1){
+                sign="=";
+            }
+            document.write(b, sign);
+            sum+=b;
+            b--;
+        }
+        document.write(sum)
+    </script>
+    
+</body>
+</html>
+<!-- ex20while.html -->

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10operator</title>
+</head>
+<body>
+    <script>
+        function print(str){
+            document.write("<h3>"+str+"</h3>");
+        }
+        print('7. 대입연산자, 연산후 대입연산자(+=,-=,*=,/=,%=,&=,|=,^=)');
+        var a=8; //= (대입연산자)
+        print('a='+a);
+        a+=3; // a=a+3
+        print('a='+a);
+        a-=5; // a=a-5
+        print('a='+a);
+        a*=4; // a=a*4
+        print('a='+a);
+        a/=7; // a=a/7
+        print('a='+a);
+        a=14;
+        print('a='+a);
+        a%=3;
+        print('a='+a);//2
+        a^=7; // a=a^7
+        /*
+            2:  00000010
+            7:  00000111
+        */
+        print('a='+a);
+
+        print('8. 조건연산자(삼항연산자)');
+        /*
+            변수 선언문=(조건식)? 값1:값2;
+                : 조건식이 true이면 변수에 값1을 대입하고,
+                          false면 변수에 값2를 대입한다
+        */
+        let x=130, y=40;
+        let z=(x>y)? "@@x가 y보다 커요":"##x가 y보다 작거나 같아요";
+        print("z="+z);
+
+
+
+    </script>
+</body>
+</html>
+<!-- ex10operator.html -->

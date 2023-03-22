@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex05varScope.html</title>
+</head>
+<body>
+    <h1>전역변수, 지역변수, 매개변수(지역변수의 일종)</h1>
+    <script type="text/javascript">
+        var global="전역변수"; //전역에서 사용 가능
+
+        function hello(){
+            var local="지역변수";//함수블럭 내에서 선언된 변수=>지역변수
+            //선언된 순간부터 속해있는 블럭까지만 살아있다.
+            alert('global='+global);
+            alert('local='+local);
+        }
+        function hi(name){ //name=>매개변수(parameter, argument)
+            //지역변수의 일종. 매개변수에는 var,let 등을 생략한다
+            document.write("<h1>Hi ~~"+name+"</h1>");
+        }
+        
+        function bye(){
+            document.write("bye()함수--------","<br>");
+            word="전역변수일까요? 지역변수일까요?";
+            //var를 생략한 변수==> 전역변수가 된다
+            document.write("word: ",word,"<br>");
+        }
+        //함수 호출해야 함수가 수행된다
+        //hello();
+        // alert('global>>'+global);//[o]
+        // alert('local>>'+local);//[x]
+        hi();
+        hi("Thomas");
+        hi("길동");
+        hi(999);
+        bye();
+        document.write("bye()함수 밖: word="+word,"<br>");
+    </script>
+</body>
+</html>
+<!-- ex05varScope.html -->

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex18for</title>
+</head>
+<body>
+    <h1>for루프 실습</h1>
+    <script>
+        /*
+           for(let i=0;i<3;i++){
+                document.write('Hello')
+           }
+        */
+        //[1]for루프 이용해서 1~10까지의 합과 곱을 구해 출력하세요
+		//1+2+3+....+10=55
+		//1*2*3* ....*10=3628800
+        let sum=0;
+        let gop=1;
+        for(let i=1;i<=10;i++){
+            // sum=sum+i;
+            sum+=i;
+            // gop=gop*i;
+            gop*=i;
+        }
+        document.write("1~10까지의 합: ", sum,"<br>");
+        document.write("1~10까지의 곱: ", gop,"<br>");
+
+        //[2] 1~20까지 정수 중 2 또는 3의 배수가 아닌 수를
+		//출력하고, 이 수들의 총합을 구하세요.
+        var a = 0;
+        for(let i=1;i<=20;i++){
+            if(i%2 != 0 && i%3 != 0){
+                print(i + ', ');
+                a += i;
+            }
+        }
+        print('<br>총합 : ' + a);
+
+
+        function print(str){
+            document.write("<h3>",str,"</h3>");
+        }
+
+         //[3]for루프를 이용해서 구구단의 7단을 출력해보세요
+         const dan=7;
+         for(let i=1;i<10;i++){
+            print(dan+"x"+i+"="+(dan*i));
+         }
+
+         //[4] prompt로 구구단의 단을 입력받아서 구구단을 table형태로 출력하세요
+        //    단, 짝수단이면 table의 배경색을 gold로 주고, 홀수단이면 skyblue로 주세요
+         //gugudan.html참조
+         
+        //[5] ex14if.html에서 작성한 성적/학점구하는 프로그램을 switch문을 이용해서
+        //    학점을 구해 출력하기
+    </script>
+    
+</body>
+</html>

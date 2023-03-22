@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex17for.html</title>
+</head>
+<body>
+    <h1>반복문(loop문) - for loop문</h1>
+    <!-- 
+        for(let 변수=초기값; 조건식; 증감식){
+            실행문;
+        }
+     -->
+     <script>
+        for(let a=1; a<5;a++){
+            //document.write('<h3>Hello '+a+'</h3>');
+            document.write(`<h2>Hello JavaScript ${a}</h2>`);
+        }
+
+        //Hi JavaScript 10
+        //Hi JavaScript 9
+        //Hi JavaScript 8
+        //Hi JavaScript 7
+        //for루프 이용해서 출력해보세요
+        for(let b=10;b>6;b--){
+            document.write(`<h2>Hi JavaScript ${b}</h2>`)
+        }
+        //alert(b)
+        //b의 scope는 for블럭 내부까지이다
+        for(i=1;i<10;i+=3){
+            document.write(`<h3>i=${i}</h3>`);
+        }
+        alert(i);//10
+        var i=100;
+        alert(i)
+     </script>
+</body>
+</html>
+<!-- ex17for.html -->

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14if.html</title>
+</head>
+<body>
+    <h1>다중 if문 - 국어,영어, 수학 성적 프로그램</h1>
+    <p>prompt로 국,영,수 점수를 실수로 입력받아서
+        각각의 과목 점수와, 총합계점수, 평균점수를 출력하고
+        학점도 출력하세요<br>
+        <!-- 
+            90<= 평균점수 <=100  =>A학점
+            80점대 : B
+            70점대 : C
+            60점대 : D
+            60점 미만: F
+         -->
+    </p>
+    <hr color="red">
+    <script>
+        let kor = prompt("국어 성적");              
+        let eng = prompt("영어 성적");
+        let math =prompt("수학 성적");
+        //취소를 누르면 null을 반환함
+        if(kor==null||eng==null||math==null){
+            alert('취소를 선택해서 다시 입력받습니다');
+            location.reload();            
+        }
+        kor=Number(kor);
+        eng=Number(eng);
+        math=Number(math);
+
+        let total = kor+eng+math;
+        let average = (total/3);
+        
+        //소수점 이하 2째 자리에서 반올림처리를 위한 연산
+        let avg=Math.round(average*100)/100;
+        //alert('avg=='+avg);
+        /*
+        A: 90,91,92,...99,100
+        B: 80,81,82,...89
+        C: 70,71,72,...79
+        */
+
+        let score;//학점
+        if(average>=80 && average <90){
+            score="B";
+        }else if(average>=90 && average<=100){
+            score="A";
+        }else if(average>=70 && average <80){
+            score="C";
+        }else if(average>=60 && average<70){
+            score="D";
+        }else if(average<60){
+            score="F";
+        }else{
+            alert('점수는 0~100점 사이로 입력해야 해요')
+            window.location.reload();//새로고침
+        }
+        let str='<table border="1" width="300px">';
+            str += "<tr><th>국어</th><td>"+kor+"</td></tr>"
+            str += "<tr><th>영어</th><td>"+eng+"</td></tr>"
+            str += "<tr><th>수학</th><td>"+math+"</td></tr>"
+            str += "<tr><th>총점</th><td>"+total+"</td></tr>"
+            str += "<tr><th>평균</th><td>"+avg+"</td></tr>"
+            str += "<tr><th>학점</th><td>"+score+"</td></tr>"
+            str+='</table>';
+        document.write(str);    
+    </script>
+</body>
+</html>
+<!-- ex14if.html -->

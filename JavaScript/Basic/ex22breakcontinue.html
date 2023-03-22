@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex22breakcontinue.html</title>
+</head>
+<body>
+    <h1>보조 제어문- break, continue문</h1>
+    <p>
+        주 제어문과 함께 사용되며, break문은 반복문일 경우 가까운 반복문을 이탈한다
+        반면 continue문은 반복문을 계속 수행한다
+    </p>
+    <script>
+        for(let i=1;i<5;i++){
+            if(i==3) break; //가장 가까운 반복문을 벗어난다
+            document.write(i,"<br>")
+        }
+        document.write("<hr>")
+
+        for(let i=1;i<5;i++){
+            if(i==3) continue; //i가 3일때 continue아래 실행문을 skip하고 반복문을 계속 수행한다
+            document.write(i,"<br>")
+        }
+        /*[1] 1~100까지의 정수 중 3의 배수를 제외한 값들의 합을 구하세요
+        단 continue문을 활용해서*/
+        let sum=0;
+        for(let i=1;i<101;i++){
+            if(i%3==0)
+                continue;
+            document.write(i, (i==100)?"=":"+");
+            sum+=i;
+        }
+        document.write(sum,"<br>");
+    </script>
+</body>
+</html>
+
+<!-- ex22breakcontinue.html -->

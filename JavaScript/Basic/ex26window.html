@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #circle{
+            background-color: rgb(138, 66, 10);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top:300px;
+            left:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>window객체의 setInterval()/clearInterval() 활용</h1>
+    <button onclick="gogo()">Move</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="window.alert('반가워요')">Alert</button>
+    <button onclick="let result=prompt('정수를 입력하세요',100); alert(result)">Prompt</button>
+    <button onclick="let yn=confirm('종료할까요?'); alert('당신의 답변은: '+yn)">Confirm</button>
+    <!-- 확인을 누르면 true, 취소는 false를 반환함 -->
+    <hr>
+    <div id="circle"></div>
+    <script>
+        let obj=document.getElementById('circle');
+        let wid=null;
+        let x=20;
+         // setInterval(함수,밀리초): 밀리초 단위로 함수를 주기적으로 계속 호출한다
+        //[1] Move버튼을 누르면 #circle의 x좌표를 이동시켜서 공이 굴러가게 만드세요
+        //[2] Stop버튼 누르면 공 굴리지 중지시키세요
+        //[3] 공이 오른쪽 끝까지 가면 다시 돌아오게 하세요
+        let gogo=function(){
+            if(wid==null){
+                wid = window.setInterval(move, 30);//0.03초마다 move를 호출
+            }
+            console.log('document.body.clientWidth: '+document.body.clientWidth)
+        }
+        
+        let move=function(){
+            if(x>document.body.clientWidth){
+                x=0;
+            }
+            obj.style.left = x+'px';
+            x+=5;
+            console.log('move()', x);
+        }
+        let stop=function(){
+            if(wid!=null){
+                window.clearInterval(wid);
+                wid=null;
+            }
+        }
+    </script>
+</body>
+</html>
+<!-- ex26window.html -->

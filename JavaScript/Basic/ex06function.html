@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex06function.html</title>
+</head>
+<body>
+<h1>함수(function)를 구성하는 방법</h1>    
+<script>
+    /*함수를 구성하는 방법
+        (),{},[]
+        [1]
+            function 함수명([매개변수]){
+                함수내용 구성
+            }
+            ==> hoisting이 지원된다
+        [2] literal방식
+            var 변수명=function([매개변수]){
+                함수내용 구성
+            }
+            ==>리터럴 방식은 hoisting이 지원되지 않는다.
+               함수를 구성한 후에야 호출 가능하다
+    함수를 호출하는 방법
+        함수명([값]);
+    */
+   plus("Good ","Luck"); //hoisting         
+   //minus(7,5); //hoisting[x]         
+   function plus(a, b){
+        document.write("<h2>"+a+"+"+b+"="+(a+b)+"</h2>");
+   }
+
+   var minus=function(x, y){
+        document.write("<h2>"+x+"-"+y+"="+(x-y)+"</h2>");
+   }
+
+   //함수 호출해보기
+   plus(88,11);
+   plus(3.14, -5.12);
+   minus(55,22);
+   minus(6.3,2.5);
+</script>
+</body>
+</html>
+
+<!-- ex06function.html -->

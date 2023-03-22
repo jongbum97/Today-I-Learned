@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex31form.html</title>
+    <script>
+        function check(){
+            //form이름.input이름.value => 사용자가 입력한 값을 얻어옴
+            //alert(window.document.frm.name.value)
+            //alert(frm.name.value);//window와 document는 생략 가능
+            //유효성 체크
+            //string trim() : 앞뒤의 공백문자를 제거하는 함수
+            if(frm.name.value.trim()==''){
+                alert('이름을 입력해야 해요');
+                frm.name.focus();//입력 포커스 주기
+                return;
+                //버튼이 submit버튼일 경우는 return문이 와도 서버에 전송된다
+                //=>[1] submit버튼을 일반 button으로 설정한 뒤에 form객체를
+                //      통해 submit()한다
+            }//if----
+            if(frm.pwd.value.trim()==''){
+                alert('비밀번호를 입력해야 해요');
+                frm.pwd.focus();
+                return;
+            }
+            frm.submit(); //서버에 전송한다
+        }//check() end-----------------
+
+        function check2(){
+            //alert('a')
+            //form에 name을 주지 않았을 경우
+            //window.document.forms[인덱스번호].input이름
+            let myf=document.forms[1];
+            //alert(myf)
+            if(!myf.name.value.trim()){
+                alert('이름을 입력하세요');
+                myf.name.focus();
+                return;
+            }
+            if(!myf.id.value.trim()){
+                alert('아이디를 입력해야 해요');
+                myf.id.focus();
+                return;
+            }
+            alert(myf.action+"#"+myf.method);
+            myf.action='password.jsp';
+            myf.method='get';
+
+            myf.submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>BOM - window.document.form객체</h1>
+    <form name="frm" action="findId.jsp" method="post">
+        <h2>아이디 찾기</h2>
+        이름:<input type="text" name="name" id="name" required><br><br>
+        비밀번호: <input type="password" name="pwd" id="pwd"><br><br>
+        <input type="button" value="아이디 찾기" onclick="check()">
+    </form>
+
+    <hr color="red">
+    <form action="findPwd.jsp" method="post">
+        이름:<input type="text" name="name" id="name2"><br><br>
+        아이디:<input type="text" name="id" id="id"><br><br>
+        <button type="button" onclick="check2()">비밀번호 찾기</button>
+    </form>
+
+    <hr color="blue">
+    <form id="idfrm" action="idCheck.jsp" onsubmit="return send()">
+        <!-- onsubmit핸들러의 경우 send()함수의 반환값에 따라 submit여부를 결정한다
+            true를 반환하면 서버에 전송하고, false를 반환하면 서버에 전송하지 않는다
+         -->
+        <h2>아이디 중복체크</h2>
+        아이디:<input type="text" name="id" id="userid"><br><br>
+        <button type="submit">아이디 중복체크</button>
+    </form>
+    <script>
+        function send(){
+            //alert('send')
+            //form이름.input이름.value
+
+            if(document.getElementById('userid').value.trim()==''){
+                alert('아이디를 입력하세요');
+                document.getElementById('userid').focus();
+                return false;//false반환하면 전송되지 못한다
+            }//if---------
+
+            return true;//true반환하면 submit
+        }//send() end-----------------
+
+    </script>
+</body>
+</html>
+<!-- ex31form.html -->

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex27document.html</title>
+</head>
+<body>
+    <h1>BOM - document 객체</h1>
+    <script>
+        /*document객체의 속성과 함수
+          [1] title 속성: 현재 문서의 제목을 출력하거나 설정
+          [2] lastModified속성: 현재 html문서가 마지막에 저장된 시간
+          [3] write() 함수
+          [4] getElementById('아이디명'), querySelector(selector), 
+                getElementsByTagName('태그명'), getElementsByClassName('클래스명')
+                querySelectorAll(선택자)
+          [5] fgColor속성: 글자색
+          [6] bgColor속성: 배경색
+        */
+       //window객체가 다 로드되고 나면 할당된 익명함수를 실행하란 의미
+       window.onload=function(){
+            window.document.title="제목을 변경해요";
+            document.bgColor='lightblue';//배경색
+            document.fgColor='maroon';//글자색
+            //document.write(`<h2>${document.lastModified}</h2>`)
+            console.log('lastModified: '+document.lastModified)
+            let obj=document.getElementById('html');
+            //alert(obj);
+
+
+            //id가 btn인 요소를 선택해서 해당 요소의 배경색을 magenta, 글자색을 yellow로 주세요
+            //1. 아이디로 찾고자할때
+            //  getElementById('아이디명'), querySelector('#아이디명')
+            let bt=document.querySelector('#btn');
+            bt.style.backgroundColor='magenta';
+            bt.style.color='yellow';
+            bt.style.border='1px dashed purple';
+
+            //2. 클래스로 찾고자할때
+            /*
+                getElementsByClassName('클래스명'), querySelectorAll('.클래스명')
+                => 반환타입 Collection유형
+            */
+             //class가 js인 요소들을 찾아서 배경색을 주세요. 테두리도 주세요
+             //let liObj=document.getElementsByClassName('js');
+             let liObj=document.querySelectorAll('.js');
+             //alert(liObj);//HTMLCollection유형=> 반복문이용해야 함
+             console.log('liObj.length='+liObj.length);//2
+            for(let i=0;i<liObj.length;i++){
+                liObj[i].style.backgroundColor='beige';
+                liObj[i].style.border='3px dashed purple';
+            }
+            //3. 태그명으로 찾고자 할 때
+            /* getElementsByTagName('태그명')
+               querySelectorAll('태그명')
+            */
+           //button태그들을 모두 찾아서 padding:4px, 배경색, 테두리를 주세요
+           //let btObj=document.getElementsByTagName('button');
+           let btObj=document.querySelectorAll('button');
+        //    alert(btObj.length) 
+            /*for(let i=0;i<btObj.length;i++){
+                btObj[i].style.backgroundColor='lime';
+                btObj[i].style.padding='4px';
+                btObj[i].style.border='thick double blue';
+            }*/
+            for(let i in btObj){
+                if(!isNaN(i)){//i가 숫자라면
+                    btObj[i].style.backgroundColor='bisque';
+                    btObj[i].style.padding='4px';
+                    btObj[i].style.border='thick double blue';
+                }
+            }
+
+       }//onload---------------       
+    </script>
+    <button id="btn">Click Me</button>
+    <button>Click Me2</button>
+    <hr color="red">
+    <ul>
+        <li id="html">HTML</li>
+        <li id="css">CSS</li>
+        <li class="js">JavaScript</li>
+        <li class="js">jQuery</li>
+    </ul>
+</body>
+</html>
+<!-- ex27document.html -->

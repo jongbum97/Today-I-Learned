@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex07function</title>
+</head>
+<body>
+    <h1>함수-function</h1>
+    <script>
+        //곱셈식을 출력하는 함수 : a*b
+        //반환값이 있는 함수
+        let gop=function(x, y){
+            document.write("<h2>"+x+"x"+y+"="+(x*y)+"</h2>");
+            return x*y;
+            //return문을 이용해서 값을 반환한다
+        }
+       let money=gop(4,8);
+       //money변수로 함수가 반환해주는 값을 받는다
+       alert((money*2)+"만원이 되었어요~");
+
+       //매개변수 2개를 받아서 나누기를 수행하고 나눈 결과값을 반환하는
+       //함수를 구성해보세요. 함수명 divide. 함수 호출하기
+       // 나누기 연산자 : /
+
+       let divide=function(x,y){
+        document.write("<h2>"+x+"/"+y+"="+(x/y)+"</h2>");
+        return x/y;
+       }
+       let money2=divide(2,10)
+    
+       alert(money2)
+
+    </script>
+</body>
+</html>
+<!-- ex07function.html -->

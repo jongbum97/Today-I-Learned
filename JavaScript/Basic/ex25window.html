@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex25window</title>
+    <style>
+        #circle{
+            background-color: cornflowerblue;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top:2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>window객체의 setTimeout()/clearTimeout() 활용</h1>
+    <!-- setInterval()/clearInterval() -->
+    <button onclick="show_hide()">Click Me</button>
+    <button onclick="gogo()">Go</button>
+    <button onclick="stop()">Stop</button>
+    <hr color="red">
+    <div id="circle">
+
+    </div>
+
+    <script>
+        let cnt=0;//전역변수
+        let wid=null;
+        let obj= document.querySelector('#circle');
+        function show_hide(){
+            //id가 circle인 div를 감추기
+            // let obj=document.getElementById('circle');
+            
+            //배경색 바꾸기 => 모든 html요소는 style객체를 갖는다
+            //                  style객체를 이용해서 css값을 변경할 수 있다.
+            obj.style.backgroundColor='hotpink';
+            //자바스크립트에서는 하이픈(-) 이 빼기(-) 연산자로 사용되므로
+            //하이픈을 빼고 대신 하이픈 뒤에 오는 첫글자를 대문자로 기술한다(camel 표기법)
+            /* display: none, visibility:hidden, opacity:0
+                        block,           visible,        1
+            */
+           if(cnt%2==0){ 
+                obj.style.display='none';
+           }else{
+                obj.style.display='block';
+           }
+           cnt++;
+           console.log('cnt: '+cnt);
+        }//show_hide()---------------------
+
+        let gogo=function(){
+            //window.setTimeout(함수, 밀리초) : 지정된 밀리초 이후에 함수를 딱 한번만 호출한다
+            wid=window.setTimeout(move,3000);//밀리초(1/1000초) : 3초 뒤에 move함수를 호출함
+        }//---------------------
+
+        let move=function(){
+            alert('까꿍~~~')
+        }
+
+        let stop=function(){
+            if(wid!=null){
+                window.clearTimeout(wid);
+                //setTimeout()으로 실행중인 프로세스를 중지시킴
+            }
+        }//-----------------------
+
+    </script>
+
+</body>
+</html>
+<!-- ex25window.html -->

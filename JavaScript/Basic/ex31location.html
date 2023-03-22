@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex30location</title>
+    <script>
+        /*location객체의 속성
+        [1] href : 현재 페이지의 url값
+        [2] hostname : 웹호스트의 도메인명을 반환
+        [3] pathname : 현재 페이지의 경로명과 파일명을 반환
+        [4] protocol : 현재 페이지의 프로토콜
+         location의 함수
+        [5] assign('파일명 또는 url') : 새로운 문서를 로드한다.
+        [6] reload() : 새로고침
+        */
+        window.onload= function(){
+            //id가 b1인 객체 얻어오기
+            let obj1=document.getElementById('b1');
+            let obj2=document.getElementById('b2');
+            let obj3=document.getElementById('msg');
+            //alert(obj1);
+
+            obj1.onclick=function(){//이벤트를 처리하는 익명함수
+               let str=`
+               <h2>href: ${window.location.href}</h2>
+               <h2>hostname: ${location.hostname}</h2>
+               <h2>pathname: ${location.pathname}</h2>
+               <h2>protocol: ${location.protocol}</h2>
+               <h2>port : ${location.port}</h2>
+               `;
+                obj3.innerHTML=str;
+            }//onclick end------
+
+            obj2.onclick=function(){
+                location.assign('http://www.google.com')
+            }
+
+        }//onload end---------------
+
+        function newPage(){
+            //assign()이용해서 ex01.html 페이지 로드시키기
+            location.assign('ex01.html')
+        }//-------------
+        function refresh(){
+            //reload(), setTimeout()활용해서
+            //3초뒤에 새`로 고침 수행시키기
+            console.log('reload()함수를 수행할 예정입니다')
+            //setTimeout(fresh,3000)
+            setTimeout(function(){
+                location.reload();
+            },3000);
+
+        }//-------------
+        function fresh(){
+            location.reload();//새로고침
+        }
+        function go(){
+            //href
+            //3초 뒤에 네이버로 이동시키기
+            setTimeout(function(){
+                location.href='http://www.naver.com';
+            },3000)
+        }//---------------
+    </script>
+</head>
+<body>
+    <h1>BOM- location객체</h1>
+    <button id="b1">location객체 속성 살펴보기</button>
+    <button id="b2">구글 페이지로 이동</button>
+    <button onclick="newPage()">새로운 페이지</button>
+    <button onclick="refresh()">3초 뒤에 새로고침</button>
+    <button onclick="go()">3초 후 페이지 이동</button>
+    <hr>
+    <div id="msg">
+
+    </div>
+</body>
+</html>
+<!-- ex30location.html -->

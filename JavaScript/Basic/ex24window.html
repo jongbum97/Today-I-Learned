@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex24window.html</title>
+</head>
+<body>
+    <h1>BOM(Browser Object Model)-window객체</h1>
+    <button onclick="openWin()">팝업창 열기</button>
+    <button onclick="closeWin()">팝업창 닫기</button>
+    <button onclick="changeLoc()">팝업창 위치변경</button>
+    <button onclick="changeSize()">팝업창 크기변경</button>
+    <hr color="red">
+    <script>
+        /* window객체의 함수
+            [1] open(url, target, 속성값)
+            [2] close()
+            [3] moveTo(x, y): 같은 서버 내에 있는 파일을 띄웠을때만 동작함
+            [4] resizeTo(w,h):      "        "
+        */ 
+        let win=null;
+        function openWin(){
+            let url='ex01.html';
+            //let url='http://www.google.com';
+            win=window.open(url,"popup","width=400,height=400,left=100px,top=100px");
+                            //url,  'target', '속성들'
+            //win => 새로 띄운 윈도우 창을 참조한다
+        }
+
+        function closeWin(){
+            if(win!=null){//팝업창이 띄워져있다면
+                win.close();
+                win=null;
+            }
+        }
+
+        function changeLoc(){
+            //팝업 창의 x,y좌표를 300,300지점으로 이동시키기
+            if(win!=null){
+                win.moveTo(300,300);
+            }
+        }
+
+        function changeSize(){
+            //팝업창의 사이즈를  700,700으로 변경하기
+            if(win!=null){
+                win.resizeTo(700,700);
+            }
+        }
+    </script>
+</body>
+</html>
+<!-- ex24window.html -->

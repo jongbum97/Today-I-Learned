@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Math객체의 함수 활용</h1>
+    <script>
+        /*[1] Math.round(number): 반올림값을 반환
+          [2] Math.floor(number): 내림값
+          [3] Math.ceil(number): 올림값
+          [4] Math.random()
+            : 0.0<= r <1.0 사이의 임의의 실수값을 반환한다  
+        */ 
+       let r=Math.random();
+       document.write(`<h2>${r}</h2>`)
+
+       //0<= r2 < 10 사이의 임의의 정수값을 발생시키세요
+       let r2=Math.floor(Math.random()*10);
+       document.write(`<h2>${r2}</h2>`)
+
+       //5<= r3 <15 사이의 임의의 정수값을 발생시키세요
+       let r3=Math.floor(Math.random()*10+5);
+       document.write(`<h2>${r3}</h2>`) 
+        /*
+        Math.floor(Math.random()*범위 + 시작수)
+        */
+        //  43<= r4 <77 사이의 임의의 정수
+       let r4=Math.floor(Math.random()*34 + 43);
+       document.write(`<h2>${r4}</h2>`)   
+
+    </script>
+</body>
+</html>
+<!-- ex28Math.html -->

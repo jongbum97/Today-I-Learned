@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex09operator.html</title>
+</head>
+<body>
+    <script>
+        function print(str){
+            document.write("<h3>"+str+"</h3>");
+        }
+        print("4. 증감연산자 (++, --)");
+        // ++ : 1씩 증가시킴
+        // -- : 1씩 감소시킴
+        let m=5;
+        let n=9;
+        m++; // m=m+1
+        n--; // n=n-1
+        print('m='+m);
+        print('n='+n);
+        // 증감연산자는 단독으로 사용될때는 변수 앞에 오든 뒤에 오든 
+        // 차이가 없다. 그러나 다른 연산자와 함께 사용할 경우는 차이가 있다
+        ++m; //7
+        --n; //7
+        print('m='+m);
+        print('n='+n);
+
+        let i=10;
+        let j=7;
+        //let k=i++;
+        let k=++i;
+        //k와 i의 값은?
+        print('k='+k);
+        print('i='+i);//11
+
+        let result= i-- + ++j;
+        //result, i, j값은?
+        print('i='+i);
+        print('j='+j);
+        print('result='+result);
+        print('5. 비트 연산자 (&, |, ^)');
+        //비트(0,1)로 바꾸어 연산한다
+        //논리식에서 사용되는 연산자
+        let a=true;
+        let b=false;
+        print("a="+a+", b="+b);
+        print('a&b='+(a&b));//0
+        print("a&true="+(a&true));//1
+        print('a|b='+(a|b));//1
+        print('false|b='+(false|b));//0
+        print('a^b='+(a^b));
+        //피연산자가 서로 다를경우 true(1), 같으면 false(0)
+        print("true^true="+(true^true));
+        //정수값을 비트(0,1)로 바꾸어 연산을 수행함
+        /*
+            1byte 8bit
+            3 :      00000011
+            5 :      00000101 
+        */
+        print("3&5="+(3&5)); //1
+        print("3|5="+(3|5)); //111 ==>10진수로 바꾸면 7
+        print("3^5="+(3^5));
+
+
+        print('6. 논리 연산자(&&, ||, &, |)')
+        /*
+       &, && : 결과는 동일하게 나오지만 &&의 경우는 앞의 피연산자가 false일 경우
+                뒤에 오는 피 연산자는 수행하지 않는다.
+       |, || : 결과는 동일함. ||의 경우 앞의 피연산자가 true일경우         
+                뒤에 오는 피 연산자는 수행하지 않는다.
+       */
+       print('a&&b='+(a&&b));//false
+       print('b&&a='+(b&&a));//연산속도가 빠르다.
+
+       print('a||b='+(a||b));
+    </script>
+    
+</body>
+</html>
+
+<!-- ex09operator.html -->
