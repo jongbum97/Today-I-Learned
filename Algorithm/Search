@@ -1,0 +1,63 @@
+public class Search {
+	public static void main(String[] args) {
+
+		// 정렬되어 있지 않은 경우
+		int[] arr = { 4, 9, 11, 23, 2, 19, 7 };
+		int idx = -1;
+		int ans = -1;
+		int key = 19;
+		while (idx < arr.length - 1) {
+			if (arr[++idx] == key) {
+				ans = idx;
+				break;
+			}
+		}
+		if (ans == -1) {
+			System.out.println("못찾았어~");
+		} else {
+			System.out.println((ans + 1) + "번 째에 있어~");
+		}
+
+		// 정렬되어 있는 경우
+		int[] arr2 = { 2, 4, 7, 9, 11, 19, 23 };
+		int idx2 = -1;
+		int ans2 = -1;
+		int key2 = 23;
+		while (idx2 < arr2.length && arr2[++idx2] <= key2) {
+			if (arr2[idx2] == key2) {
+				ans2 = idx2;
+				break;
+			}
+		}
+		if (ans2 == -1) {
+			System.out.println("못찾았어~");
+		} else {
+			System.out.println((ans2 + 1) + "번 째에 있어~");
+		}
+
+		// 이진검색(Binary Search)
+		int[] arr3 = { 2, 4, 7, 9, 11, 19, 23, 25, 35, 41, 47, 52, 57, 62, 67, 70, 77, 78, 80, 99 };
+		int key3 = 35;
+		int st = 0;
+		int ed = arr3.length-1;
+		int ans3 = -1;
+
+		while (st<=ed) {
+			if (key3 < arr3[(st + ed) / 2]) {
+				ed = (st + ed) / 2 - 1;
+			} else if (key3 == arr3[(st + ed) / 2]) {
+				ans3 = (st + ed) / 2;
+				break;
+			} else {
+				st = (st + ed) / 2 + 1;
+			}
+			System.out.println("st:" + st + "  ed:" + ed);
+		}
+		if (ans3 == -1) {
+			System.out.println("못찾았썽");
+		} else {
+			System.out.println((ans3 + 1) + "번 째에 있어~");
+		}
+
+	}
+}
