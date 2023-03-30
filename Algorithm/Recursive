@@ -1,0 +1,38 @@
+public class Recursive {
+	public static void main(String[] args) {
+		
+//		func1();
+		func2(5);
+		System.out.println(factorial(10));
+		System.out.println(fibo(10));
+	}
+	
+	public static void func1() {
+		System.out.println("함수 내부");
+		func1();
+	}
+	
+	public static void func2(int num) {
+		if(num==0){
+			return;
+		}
+		System.out.println(num+"함수 호출");
+		func2(num-1);
+		System.out.println(num+"함수 리턴");
+	}
+	
+	public static int factorial(int num) {
+		if(num==1){
+			return 1;
+		}
+		return factorial(num-1)*num;
+	}
+	
+	public static int fibo(int num) {
+		if(num==1) return 1;
+		if(num==2) return 1;
+		
+		return fibo(num-1)+fibo(num-2);
+	}
+	
+}
