@@ -1,0 +1,57 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class QueueTest {
+
+//선형큐
+	static int size = 100;
+	static int[] Queue = new int[size];
+	static int front = -1;
+	static int rear = -1;
+
+	static boolean isEmpty() {
+		return front == rear;
+	}
+
+	static boolean isFull() {
+		return rear == size - 1;
+	}
+
+	public static void enQueue(int item) {
+		if (isFull()) {
+			return;
+		}
+		Queue[++rear] = item;
+	}
+
+	public static int deQueue() {
+		if (isEmpty()) {
+			return -1;
+		}
+		return Queue[++front];
+	}
+
+	public static void main(String[] args) {
+
+		
+		//Queue API
+		
+		Queue<Integer> queue = new LinkedList<>();
+
+		// 삽입
+		queue.add(10);
+		queue.offer(20);
+//		
+//		//삭제
+		System.out.println(queue.remove());
+		System.out.println(queue.poll());
+//		
+//		//조회
+		System.out.println(queue.element());
+		System.out.println(queue.peek());
+
+		// add, remove, element : 예외를 발생시킨다.
+		// offer, poll, peek : 값을 리턴한다.
+
+	}
+}
