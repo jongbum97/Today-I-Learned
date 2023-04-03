@@ -30,3 +30,5 @@ print(num1,'-',num2,'=',result)
 
 result = multiple_func(num1, num2)
 print(num1,'*',num2,'=',result)
+
+대충 제곱함수
